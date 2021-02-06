@@ -1,6 +1,12 @@
 # employee-tracker
 
 
+## User Story
+
+As a business owner
+I want to be able to view and manage the departments, roles, and employees in my company
+So that I can organize and plan my business
+
 ## Description
 
 Architect and build a solution for managing a company's employees using node, inquirer, and MySQL using a command-line application that at a minimum allows the user to:
@@ -15,12 +21,6 @@ Bonus points if you're able to:
   * View employees by manager
   * Delete departments, roles, and employees
   * View the total utilized budget of a department -- ie the combined salaries of all employees in that department
-
-## User Story
-
-As a business owner
-I want to be able to view and manage the departments, roles, and employees in my company
-So that I can organize and plan my business
 
 ## Guidelines
 
@@ -41,7 +41,7 @@ So that I can organize and plan my business
 
 ## Demo
 
-<//insert demo gif video here\\>
+<<INSERT DEMO GIF VIDEO HERE!>>
 
 ## Deploying the App
 
@@ -50,4 +50,5 @@ This app should be deployed using a command-line application.
 ***
 
 https://github.com/tracy80s2003/employee-tracker
+
 https://tracy80s2003.github.io/employee-tracker/
