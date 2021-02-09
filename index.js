@@ -16,12 +16,13 @@ connection.connect(err => {
     console.log(`MySQL connected on ${connection.threadId}`)
 });
 
-const manageOrg = () => {
-    inquirer.prompt([
+function manageOrg() {
+    inquirer.prompt(
+        [
         {
             name: 'action',
             type: 'list',
-            message: 'What would you like to do?',
+            message: 'WELCOME! What would you like to do?',
             choices: 
             [
                 'VIEW departments, roles and employees',
@@ -32,66 +33,103 @@ const manageOrg = () => {
                 'UPDATE employee managers',
                 'DELETE departments, roles and employees',
                 'EXIT'
-            ]
-        }
-    ]).then(answer => {
+            ],
+        },
+    ]).then(res => {
         // console.log(answer)
-        if (answer.action === 'VIEW departments, roles and employees') {
-            viewDeptRoleEmps()
-        } else if (answer.action ==='VIEW employees by manager') {
-           viewEmplByMgr() 
-        } else if (answer.action ==='VIEW the total utilized budget of a department') {
-           viewTotalUtilBudget()
-        } else if (answer.action ==='ADD departments, roles and employees') {
-            addDeptRoleEmps()
-        } else if (answer.action ==='UPDATE employee roles') {
-            updateEmpRole()
-        } else if (answer.action ==='UPDATE employee managers') {
-            updateEmpMgr()
-        } else if (answer.action ==='DELETE departments, roles and employees') {
-            deleteDeptRoleEmps()
-        } else {
-            exit()
+        if(res.action == "VIEW departments, roles and employees"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                console.log('\n')
+                console.table(res)
+                console.log('\n')
+            })
+        } else if(res.action == "VIEW employees by manager"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                // console.log('\n')
+                console.table(res)
+                // console.log('\n') 
+            })
+        } else if(res.action == "VIEW the total utilized budget of a department"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                // console.log('\n')
+                console.table(res)
+                // console.log('\n') 
+            })
+        } else if(res.action == "ADD departments, roles and employees"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                // console.log('\n')
+                console.table(res)
+                // console.log('\n') 
+            })
+        } else if(res.action == "UPDATE employee roles"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                // console.log('\n')
+                console.table(res)
+                // console.log('\n') 
+            })
+        } else if(res.action == "UPDATE employee managers"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                // console.log('\n')
+                console.table(res)
+                // console.log('\n') 
+            })
+        } else if(res.action == "DELETE departments, roles and employees"){
+            let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
+            FROM employee
+            LEFT JOIN role
+            ON role_id = role.id
+            LEFT JOIN department
+            ON department_id = department.id;`
+            connection.query(query, (err, res) => {
+                if(err) throw err;
+                // console.log('\n')
+                console.table(res)
+                // console.log('\n') 
+            })
         }
     })
 }
 
-const viewDeptRoleEmps = () => {
-    console.log('viewDeptRoleEmps')
-    manageOrg()
-}
-
-const viewEmplByMgr = () => {
-    console.log('viewEmplByMgr')
-    manageOrg()
-}
-
-const viewTotalUtilBudget = () => {
-    console.log('viewTotalUtilBudget')
-    manageOrg()
-}
-
-const addDeptRoleEmps = () => {
-    console.log('addDeptRoleEmps')
-    manageOrg()
-}
-
-const updateEmpRole = () => {
-    console.log('updateEmpRole')
-    manageOrg()
-}
-
-const updateEmpMgr = () => {
-    console.log('updateEmpMgr')
-    manageOrg()
-}
-
-const deleteDeptRoleEmps = () => {
-    console.log('deleteDeptRoleEmps')
-    manageOrg()
-}
-
-const exit = () => {
-    connection.end()
-    process.exit()
-}
+manageOrg()
