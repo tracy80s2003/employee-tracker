@@ -1,0 +1,52 @@
+DROP DATABASE IF EXISTS employee_trackerDB;
+CREATE database employee_trackerDB;
+
+USE employee_trackerDB;
+
+CREATE TABLE department (
+  id INT NOT NULL AUTO_INCREMENT,
+  deptName VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE role (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(30) NOT NULL,
+  salary DECIMAL(7,2) NOT NULL,
+  department_id INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (department_id) REFERENCES department(id)
+);
+
+CREATE TABLE employee (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  role_id INT NOT NULL,
+  manager_id INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (role_id) REFERENCES role(id)
+);
+
+SELECT * FROM department;
+SELECT * FROM role;
+SELECT * FROM employee;
+
+-- Creates new rows containing data in all named columns --
+-- INSERT INTO people (name, has_pet, pet_name, pet_age)
+-- VALUES ("Ahmed", TRUE, "Rockington", 100);
+
+-- INSERT INTO people (name, has_pet, pet_name, pet_age)
+-- VALUES ("Ahmed", TRUE, "Rockington", 100);
+
+-- INSERT INTO people (name, has_pet, pet_name, pet_age)
+-- VALUES ("Jacob", TRUE, "Misty", 10);
+
+-- INSERT INTO people (name, has_pet)
+-- VALUES ("Peter", false);
+
+-- Updates the row where the column name is peter --
+-- UPDATE people
+-- SET has_pet = true, pet_name = "Franklin", pet_age = 2
+-- WHERE name = "Peter";
+
