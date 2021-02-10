@@ -59,9 +59,9 @@ function manageOrg() {
             ON department_id = department.id;`
             connection.query(query, (err, res) => {
                 if(err) throw err;
-                // console.log('\n')
+                console.log('\n')
                 console.table(res)
-                // console.log('\n') 
+                console.log('\n') 
             })
         } else if(res.action == "VIEW the total utilized budget of a department"){
             let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
@@ -72,9 +72,9 @@ function manageOrg() {
             ON department_id = department.id;`
             connection.query(query, (err, res) => {
                 if(err) throw err;
-                // console.log('\n')
+                console.log('\n')
                 console.table(res)
-                // console.log('\n') 
+                console.log('\n') 
             })
         } else if(res.action == "ADD departments, roles and employees"){
             let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
@@ -85,9 +85,9 @@ function manageOrg() {
             ON department_id = department.id;`
             connection.query(query, (err, res) => {
                 if(err) throw err;
-                // console.log('\n')
+                console.log('\n')
                 console.table(res)
-                // console.log('\n') 
+                console.log('\n') 
             })
         } else if(res.action == "UPDATE employee roles"){
             let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
@@ -98,9 +98,9 @@ function manageOrg() {
             ON department_id = department.id;`
             connection.query(query, (err, res) => {
                 if(err) throw err;
-                // console.log('\n')
+                console.log('\n')
                 console.table(res)
-                // console.log('\n') 
+                console.log('\n') 
             })
         } else if(res.action == "UPDATE employee managers"){
             let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
@@ -111,9 +111,9 @@ function manageOrg() {
             ON department_id = department.id;`
             connection.query(query, (err, res) => {
                 if(err) throw err;
-                // console.log('\n')
+                console.log('\n')
                 console.table(res)
-                // console.log('\n') 
+                console.log('\n') 
             })
         } else if(res.action == "DELETE departments, roles and employees"){
             let query = `SELECT employee.id, first_name, last_name, role.title, role.salary, deptName
@@ -124,12 +124,44 @@ function manageOrg() {
             ON department_id = department.id;`
             connection.query(query, (err, res) => {
                 if(err) throw err;
-                // console.log('\n')
+                console.log('\n')
                 console.table(res)
-                // console.log('\n') 
+                console.log('\n') 
             })
         }
     })
 }
 
 manageOrg()
+  
+
+
+
+
+//   app.post('/', (req, res) => {
+//     connection.query('INSERT INTO wishes (wish) VALUES (?)', [req.body.wish], (err, results) => {
+//       if (err) throw err
+//       res.status(200).send()
+//     })
+//   })
+  
+//   app.put('/:id', (req, res) => {
+//     const id = req.params.id
+//     const wish = req.body.wish
+//     connection.query('UPDATE wishes SET wish = ? WHERE id = ?', [wish, id], (err, results) => {
+//       if (err) throw err
+//       res.status(200).send()
+//     })
+//   })
+   
+  
+//   app.delete('/:id', (req, res) => {
+//     const id = req.params.id
+//     connection.query('DELETE FROM wishes WHERE id = ?', [id], (err, results) => {
+//       if (err) throw err
+//       res.status(200).send()
+//     })
+//   })
+  
+  
+//   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
