@@ -15,8 +15,8 @@ INSERT INTO role (title, salary, department_id) VALUES
 ("Admin Asst", 50000.00, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
-("Elvis", "Presley", 2, NULL),
+("Lolli", "Popkins", 2, NULL),
 ("Jane", "Doe", 3, 1),
-("Bob", "Marley", 4, 2),
+("Winston", "Churchill", 4, 2),
 ("Jim", "Bob", 1, 3),
 ("Snoop", "Dogg", 4, 1);
