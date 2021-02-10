@@ -41,13 +41,15 @@ Bonus points if you're able to:
 
 ## Demo
 
-<<INSERT DEMO GIF VIDEO HERE!>>
+<img src="./assets/images/employee-tracker.gif" />
 
 ## Deploying the App
 
 This app should be deployed using a command-line application.
 
 ***
+
+https://drive.google.com/file/d/1k3PFpoaPlMlLyeAZQ22tb-PqPhJ0h_yE/view
 
 https://github.com/tracy80s2003/employee-tracker
 

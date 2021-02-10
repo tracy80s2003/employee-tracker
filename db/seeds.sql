@@ -20,8 +20,6 @@ INSERT INTO role (title, salary, department_id) VALUES
 ("IT Specialist", 60000.00, 5),
 ("IT Manager", 80000.00, 5),
 
-
-
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
 ("Lolli", "Popkins", 1, NULL),
 ("Jane", "Doe", 3, 1),
